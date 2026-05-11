@@ -166,6 +166,40 @@ python app.py
 
 ---
 
+---
+
+# Screenshots
+
+## Home Interface
+
+<p align="center">
+  <img src="images/home.png" width="1000">
+</p>
+
+---
+
+## PDF Upload Interface
+
+<p align="center">
+  <img src="images/upload.png" width="1000">
+</p>
+
+---
+
+## Chatbot Response
+
+<p align="center">
+  <img src="images/chat_response.png" width="1000">
+</p>
+
+---
+
+## Retrieved Source Chunks
+
+<p align="center">
+  <img src="images/source_chunks.png" width="1000">
+</p>
+
 ## Author
 
 Rouman Syed Nazeer
