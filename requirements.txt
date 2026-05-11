@@ -1,0 +1,12 @@
+streamlit
+google-generativeai
+langchain
+langchain-community
+sentence-transformers
+faiss-cpu
+pypdf
+PyPDF2
+python-dotenv
+rank-bm25
+numpy
+scikit-learn
