@@ -1,32 +1,38 @@
-# Ask My PDF Bot
+# Ask My PDF Bot (Advanced RAG System)
 
-An intelligent PDF Question Answering chatbot built using Python, LangChain, FAISS, and Large Language Models.  
-The application allows users to upload PDF documents and ask questions based on the document content using Retrieval-Augmented Generation (RAG).
+An advanced AI-powered PDF Question Answering system built using Python, LangChain, FAISS, Sentence Transformers, and Large Language Models.
+
+The application enables users to upload PDF documents and interact with them conversationally using Retrieval-Augmented Generation (RAG). The system retrieves relevant contextual information from the uploaded document and generates intelligent, context-aware responses similar to ChatGPT.
 
 ---
 
 ## Features
 
-- Upload and process PDF documents
-- Extract text from PDFs
-- Split text into meaningful chunks
-- Generate embeddings using Sentence Transformers
-- Store embeddings in FAISS vector database
-- Retrieve relevant document context
-- Ask questions and receive AI-generated answers
-- Simple and interactive chatbot interface
+- Upload and analyze PDF documents
+- Conversational AI chatbot interface
+- Advanced Retrieval-Augmented Generation (RAG)
+- Semantic document search using FAISS
+- Intelligent context-aware question answering
+- Local embedding generation using Sentence Transformers
+- Source chunk retrieval and citation display
+- Conversational memory support
+- Streamlit interactive web interface
+- OpenRouter LLM integration
+- Real-time PDF processing pipeline
 
 ---
 
 ## Technologies Used
 
 - Python
+- Streamlit
 - LangChain
-- FAISS
+- FAISS Vector Database
 - Sentence Transformers
-- OpenRouter API / Groq API
-- Streamlit / FastAPI
-- PyPDF
+- OpenRouter API
+- OpenAI SDK
+- PyPDF2
+- dotenv
 - HuggingFace Embeddings
 
 ---
@@ -38,6 +44,8 @@ Ask_My_PDF_Bot/
 │
 ├── assets/
 ├── data/
+├── images/
+│
 ├── utils/
 │   ├── chatbot.py
 │   ├── chunking.py
@@ -56,31 +64,57 @@ Ask_My_PDF_Bot/
 
 ---
 
-## How It Works
+## System Workflow
 
-### 1. PDF Loading
+### 1. PDF Upload
 
-The uploaded PDF document is loaded and text is extracted.
+Users upload a PDF document through the Streamlit interface.
 
-### 2. Text Chunking
+### 2. Text Extraction
 
-The extracted text is divided into smaller chunks for efficient retrieval.
+The system extracts textual content from the uploaded PDF using PyPDF2.
 
-### 3. Embedding Generation
+### 3. Text Chunking
 
-Text chunks are converted into vector embeddings using Sentence Transformers.
+The extracted content is divided into smaller semantic chunks using LangChain text splitters.
 
-### 4. Vector Storage
+### 4. Embedding Generation
 
-Embeddings are stored inside a FAISS vector database.
+Each chunk is converted into vector embeddings using Sentence Transformers.
 
-### 5. Retrieval
+### 5. Vector Database Storage
 
-Relevant chunks are retrieved based on the user's question.
+Generated embeddings are stored inside a FAISS vector database for efficient semantic retrieval.
 
-### 6. Response Generation
+### 6. Semantic Retrieval
 
-The retrieved context is passed to the language model to generate accurate answers.
+When the user asks a question, the system retrieves the most relevant chunks from the vector database.
+
+### 7. Response Generation
+
+The retrieved context is passed to the Large Language Model through OpenRouter to generate intelligent and context-aware answers.
+
+---
+
+## Architecture Overview
+
+```text
+PDF Upload
+     ↓
+Text Extraction
+     ↓
+Chunking
+     ↓
+Embedding Generation
+     ↓
+FAISS Vector Storage
+     ↓
+Semantic Retrieval
+     ↓
+LLM Response Generation
+     ↓
+Conversational AI Answer
+```
 
 ---
 
@@ -92,7 +126,7 @@ The retrieved context is passed to the language model to generate accurate answe
 git clone https://github.com/yourusername/Ask_My_PDF_Bot.git
 ```
 
-### Navigate to Project Folder
+### Navigate to Project Directory
 
 ```bash
 cd Ask_My_PDF_Bot
@@ -132,7 +166,6 @@ Create a `.env` file in the root directory and add:
 
 ```env
 OPENROUTER_API_KEY=your_api_key
-GROQ_API_KEY=your_api_key
 ```
 
 ---
@@ -140,31 +173,44 @@ GROQ_API_KEY=your_api_key
 ## Run the Application
 
 ```bash
-python app.py
+streamlit run app.py
 ```
 
 ---
 
-## Future Improvements
+## Example Questions
+
+- What is this PDF about?
+- Summarize the document
+- Explain the key concepts discussed
+- What are the important points mentioned?
+- Explain this topic in simple terms
+
+---
+
+## Future Enhancements
 
 - Multi-PDF support
-- Chat history
-- Better UI design
-- Document summarization
+- OCR support for scanned PDFs
+- Persistent vector database storage
 - Voice-based interaction
+- Advanced citation-aware responses
+- User authentication system
 - Cloud deployment
+- Export chat history
+- PDF summarization dashboard
 
 ---
 
 ## Applications
 
-- Research assistance
-- Academic document analysis
-- Resume and report querying
-- Legal and business document analysis
-- Study material assistant
-
----
+- Research paper analysis
+- Academic study assistant
+- Resume and report analysis
+- Legal document understanding
+- Business document querying
+- Technical documentation assistant
+- Knowledge retrieval systems
 
 ---
 
@@ -186,7 +232,7 @@ python app.py
 
 ---
 
-## Chatbot Response
+## Conversational Chat Interface
 
 <p align="center">
   <img src="images/chat_response.png" width="1000">
@@ -200,6 +246,10 @@ python app.py
   <img src="images/source_chunks.png" width="1000">
 </p>
 
+---
+
 ## Author
 
-Rouman Syed Nazeer
+### Rouman Syed Nazeer
+
+AI/ML Developer | Python Developer | Generative AI Enthusiast
