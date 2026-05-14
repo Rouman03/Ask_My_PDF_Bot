@@ -10,3 +10,11 @@ python-dotenv
 rank-bm25
 numpy
 scikit-learn
+streamlit
+openai
+python-dotenv
+PyPDF2
+langchain
+langchain-community
+faiss-cpu
+sentence-transformers
